@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onStart() {
         super.onStart();
-        if(authenticate() == true){
+        if(authenticate()){
             displayUserDetails();
         } else {
             startActivity(new Intent(MainActivity.this, Login.class));
@@ -37,8 +37,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private boolean authenticate(){
-        return userLocalStore.getUserLoggedIn();
+        if (userLocalStore.getLoggedInUser() == null) {
+            Intent intent = new Intent(this, Login.class);
+            startActivity(intent);
+            return false;
+        }
+        return true;
     }
+
     private void displayUserDetails(){
         User user = userLocalStore.getLoggedInUser();
         etUsername.setText(user.username);

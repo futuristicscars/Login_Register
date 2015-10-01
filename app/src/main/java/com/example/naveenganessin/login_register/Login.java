@@ -75,5 +75,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         userLocalStore.setUserLoggedin(true);
 
         startActivity(new Intent(this, MainActivity.class));
+        System.out.println("changing to mainActivity");
+        System.out.println("name: " + returnedUser.name);
     }
 }
