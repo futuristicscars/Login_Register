@@ -21,13 +21,10 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-/**
- * Created by naveenganessin on 30/9/15.
- */
 public class ServerRequests {
     ProgressDialog progressDialog;
     public static final int CONNECTION_TIMEOUT = 1000 * 15;
-    public static final String SERVER_ADDRESS = "mysql2.000webhost.com";
+    public static final String SERVER_ADDRESS = "http://narvancy.net76.net/";
     public ServerRequests(Context context){
          progressDialog = new ProgressDialog(context);
         progressDialog.setCancelable(false);
@@ -68,7 +65,7 @@ public class ServerRequests {
                 post.setEntity(new UrlEncodedFormEntity(datatoSend));
                 client.execute(post);
             }catch(Exception e){
-
+                e.printStackTrace();
             }
             return null;
         }
