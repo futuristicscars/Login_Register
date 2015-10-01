@@ -27,7 +27,7 @@ import java.util.ArrayList;
 public class ServerRequests {
     ProgressDialog progressDialog;
     public static final int CONNECTION_TIMEOUT = 1000 * 15;
-    public static final String SERVER_ADDRESS = "http://server14.000webhost.com";
+    public static final String SERVER_ADDRESS = "mysql2.000webhost.com";
     public ServerRequests(Context context){
          progressDialog = new ProgressDialog(context);
         progressDialog.setCancelable(false);
